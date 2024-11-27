@@ -2,7 +2,7 @@ import React from 'react';
 import './TodoList.scss';
 import TodoListItem from './TodoListItem';
 
-const TodoList = ({ todos }) => {
+const TodoList = ({ todos, onRemove }) => {
 
     
   return (
@@ -18,7 +18,7 @@ const TodoList = ({ todos }) => {
       */}
       {/* todo 데이터는 통째로 props로 전달 => 여러 종류의 값 전달 시, 추후 성능 최적화할 때 편리 */}
       {todos.map((todo) => (
-        <TodoListItem todo={todo} key={todo.id} />
+        <TodoListItem todo={todo} key={todo.id} onRemove={onRemove} />
       ))}
     </div>
   );
