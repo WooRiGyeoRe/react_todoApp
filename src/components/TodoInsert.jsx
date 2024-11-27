@@ -1,5 +1,6 @@
 import React from 'react';
 import { MdAdd } from 'react-icons/md'; // 아이콘 사용
+import './TodoInsert.scss';
 
 // [ 아이콘 사용 방법 ]
 // 사이트에서 사용하고 싶은 아이콘을 고르고, import 구문을 사용하여 불러옴

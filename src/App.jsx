@@ -1,15 +1,14 @@
 import React from 'react';
 import TodoTemplate from './components/TodoTemplate';
 import TodoInsert from './components/TodoInsert';
-import TodoListItem from './components/TodoListItem';
+// import TodoListItem from './components/TodoListItem';
+import TodoList from './components/TodoList';
 
 const App = () => {
   return (
     <TodoTemplate>
       <TodoInsert />
-      <TodoListItem />
-      <TodoListItem />
-      <TodoListItem />
+      <TodoList />
     </TodoTemplate>
   );
 };
