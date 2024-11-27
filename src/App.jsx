@@ -29,6 +29,7 @@ const App = () => {
   // ref를 사용해 변수 담기
   const nextId = useRef(4);
 
+  // 할일 추가
   const onInsert = useCallback(
     (text) => {
       const todo = {
