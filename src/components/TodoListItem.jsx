@@ -12,8 +12,8 @@ import cn from 'classnames';
 // className에 true에 해당하는 값은 추가로 표시가 되고,
 // false가 된다면 className에 적용되지 않음!
 
-const TodoListItem = ({ todo }) => {
-  const { text, checked } = todo;
+const TodoListItem = ({ todo, onRemove }) => {
+  const { id, text, checked } = todo;
 
   return (
     <div className="TodoListItem">
@@ -31,7 +31,7 @@ const TodoListItem = ({ todo }) => {
          */}
         {checked ? <MdCheckBox /> : <MdCheckBoxOutlineBlank />}
         <div className="text">{text}</div>
-        <div className="remove">
+        <div className="remove" onClick={() => onRemove(id)}>
           <MdRemoveCircleOutline />
         </div>
       </div>

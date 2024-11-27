@@ -51,7 +51,7 @@ const App = () => {
   // 할일 지우기
   const onRemove = useCallback(
     (id) => {
-      setTodos(todos.filter((todo) => todo.is !== id));
+      setTodos(todos.filter((todo) => todo.id !== id));
     },
     [todos],
   );

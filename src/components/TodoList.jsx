@@ -4,7 +4,6 @@ import TodoListItem from './TodoListItem';
 
 const TodoList = ({ todos, onRemove }) => {
 
-    
   return (
     <div className="TodoList">
       {/* todos 배열이 TodoList에 props로 전달되면서 3번 작성할 필요가 없어짐!*/}
