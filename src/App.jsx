@@ -56,11 +56,27 @@ const App = () => {
     [todos],
   );
 
+  // 할일 수정
+  // [todos] 배열이 변경될 때만 새로 생성됨
+  const onToggle = useCallback(
+    (id) => {
+      setTodos(
+        todos.map(
+          (todo) =>
+            todo.id === id
+              ? { ...todo, checked: !todo.checked } // 조건 만족 시 `checked` 상태 토글
+              : todo, // 조건 불만족 시 기존 객체 유지
+        ),
+      );
+    },
+    [todos],
+  );
+
   return (
     <TodoTemplate>
       <TodoInsert onInsert={onInsert} />
       {/* todos 배열을 TodoList로 전달 */}
-      <TodoList todos={todos} onRemove={onRemove} />
+      <TodoList todos={todos} onRemove={onRemove} onToggle={onToggle} />
     </TodoTemplate>
   );
 };

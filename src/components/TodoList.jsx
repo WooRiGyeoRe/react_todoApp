@@ -2,8 +2,7 @@ import React from 'react';
 import './TodoList.scss';
 import TodoListItem from './TodoListItem';
 
-const TodoList = ({ todos, onRemove }) => {
-
+const TodoList = ({ todos, onRemove, onToggle }) => {
   return (
     <div className="TodoList">
       {/* todos 배열이 TodoList에 props로 전달되면서 3번 작성할 필요가 없어짐!*/}
@@ -17,7 +16,12 @@ const TodoList = ({ todos, onRemove }) => {
       */}
       {/* todo 데이터는 통째로 props로 전달 => 여러 종류의 값 전달 시, 추후 성능 최적화할 때 편리 */}
       {todos.map((todo) => (
-        <TodoListItem todo={todo} key={todo.id} onRemove={onRemove} />
+        <TodoListItem
+          todo={todo}
+          key={todo.id}
+          onRemove={onRemove}
+          onToggle={onToggle}
+        />
       ))}
     </div>
   );

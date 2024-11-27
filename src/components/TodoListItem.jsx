@@ -12,7 +12,7 @@ import cn from 'classnames';
 // className에 true에 해당하는 값은 추가로 표시가 되고,
 // false가 된다면 className에 적용되지 않음!
 
-const TodoListItem = ({ todo, onRemove }) => {
+const TodoListItem = ({ todo, onRemove, onToggle }) => {
   const { id, text, checked } = todo;
 
   return (
@@ -25,7 +25,7 @@ const TodoListItem = ({ todo, onRemove }) => {
       - checked가 true =>  <div className="checkbox checked"> 
       - checked가 false => <div className="checkbox"> 
       */}
-      <div className={cn('checkbox', { checked })}>
+      <div className={cn('checkbox', { checked })} onClick={() => onToggle(id)} >
         {/* 삼항연산자 
             => checked가 true면 MdCheckBox, false면 MdCheckBoxOutlineBlank
          */}
