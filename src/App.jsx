@@ -48,11 +48,19 @@ const App = () => {
     [todos],
   );
 
+  // 할일 지우기
+  const onRemove = useCallback(
+    (id) => {
+      setTodos(todos.filter((todo) => todo.is !== id));
+    },
+    [todos],
+  );
+
   return (
     <TodoTemplate>
       <TodoInsert onInsert={onInsert} />
       {/* todos 배열을 TodoList로 전달 */}
-      <TodoList todos={todos} />
+      <TodoList todos={todos} onRemove={onRemove} />
     </TodoTemplate>
   );
 };
