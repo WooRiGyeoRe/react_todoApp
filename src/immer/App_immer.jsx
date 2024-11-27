@@ -2,7 +2,7 @@
 // 12장. immer 예제코드
 // =================================
 import React, { useRef, useCallback, useState } from 'react';
-import { produce } from '../node_modules/immer/dist/immer'; // import produce from 'immer';
+import { produce } from '../../node_modules/immer/dist/immer'; // import produce from 'immer';
 
 // 1-1) immer를 사용하지 않고 불변성 유지
 // const App_immer = () => {
