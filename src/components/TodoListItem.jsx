@@ -25,7 +25,7 @@ const TodoListItem = ({ todo, onRemove, onToggle }) => {
       - checked가 true =>  <div className="checkbox checked"> 
       - checked가 false => <div className="checkbox"> 
       */}
-      <div className={cn('checkbox', { checked })} onClick={() => onToggle(id)} >
+      <div className={cn('checkbox', { checked })} onClick={() => onToggle(id)}>
         {/* 삼항연산자 
             => checked가 true면 MdCheckBox, false면 MdCheckBoxOutlineBlank
          */}
@@ -39,4 +39,8 @@ const TodoListItem = ({ todo, onRemove, onToggle }) => {
   );
 };
 
-export default TodoListItem;
+// export default TodoListItem;
+export default React.memo(TodoListItem);
+
+
+ 
