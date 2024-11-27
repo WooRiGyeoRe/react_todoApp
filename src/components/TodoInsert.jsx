@@ -16,15 +16,17 @@ const TodoInsert = ({ onInsert }) => {
     setValue(e.target.value);
   }, []);
 
+  // 할일(Todo) 추가 기능
   const onSubmit = useCallback(
     (e) => {
-      onInsert(value);
+      onInsert(value); // 부모로 전달된 `onInsert` 함수 호출해 현재 value를 전달
       setValue(''); // value 값 초기화
 
       // submit 이벤트 => 브라우저 새로고침 발생시킴
       // 이를 방지하기 위한 함수 호출
       e.preventDefault();
     },
+    // onInsert와 value가 변경될 때만 새 onSubmit 함수가 생성됨
     [onInsert, value],
   );
 

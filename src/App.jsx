@@ -26,17 +26,22 @@ const App = () => {
   ]);
 
   // 고윳값으로 사용될 id
-  // ref를 사용해 변수 담기
+  // ref를 사용해 nextId 변수를 정의함 => 새로운 할 일(Todo)에 고유 ID 부여
+  /* 초기값은 4 => 컴포넌트 리렌더링되도 유지됨!!! 
+     => useRef를 사용하면 값이 변경되어도 컴포넌트가 다시 렌더링되지 않음! (useState와 다른점)  */
   const nextId = useRef(4);
 
   // 할일 추가
   const onInsert = useCallback(
+    // useCallback을 사용해 todos 배열이 변경될 때만 함수가 새로 생성되게 함.
     (text) => {
       const todo = {
         id: nextId.current,
         text,
-        checked: false,
+        checked: false, // 할 일이 완료되지 않았으므로 초기값은 false
       };
+      // setTodos로 기존 todos 배열에 새 todo를 추가함.
+      // concat 메서드로 기존 배열에 새 객체를 추가한 새로운 배열을 반환
       setTodos(todos.concat(todo));
       nextId.current + 1; // nextId 1씩 더하기
     },
