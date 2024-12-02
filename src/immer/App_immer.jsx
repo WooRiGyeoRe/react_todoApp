@@ -122,6 +122,8 @@ const App_immer = () => {
   // [2] immer 적용
   const addItem = () => {
     setData(
+      // data [123]
+      // setData(asdfasdfasdfasdf)
       produce(data, (draft) => {
         draft.push(data.length + 1);
       }),
