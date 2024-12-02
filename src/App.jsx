@@ -64,7 +64,7 @@ const App = () => {
       // concat 메서드로 기존 배열에 새 객체를 추가한 새로운 배열을 반환
       // 기존: setTodos(todos.concat(todo));
       setTodos((todos) => todos.concat(todo)); // useState의 함수형 업데이트 사용
-      nextId.current + 1; // nextId 1씩 더하기
+      nextId.current += 1; // nextId 1씩 더하기
     },
     [todos],
   );
@@ -117,3 +117,28 @@ const App = () => {
 };
 
 export default App;
+
+// let obj1 = {
+//   name: 'ganadi',
+//   detail: {
+//     age: 17,
+//   },
+// };
+
+// 전개 연산자
+// namem~~ detale~~
+
+// name ~~ detail {}; => 얕은 복사 (shell dopy);
+
+// immer x => immer
+
+// const array = [1,2,3,4,];
+
+// const arrary333 = array; => 배열이 바라보는 주소만 가져옴
+
+// const arr1 = [...array]; => 배열이 새로 만들어짐
+
+// obj1 = {
+//   ...obj1,
+//   neame: 'gomyami'
+// }
